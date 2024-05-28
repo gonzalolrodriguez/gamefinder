@@ -1,6 +1,5 @@
-# Bienvenido a Mi Proyecto
-
-Hola a todos a Game Finder !
+# Bienvenido!
+Hola a todos, esto es Game Finder !
 
 ## Acerca del Proyecto
 
