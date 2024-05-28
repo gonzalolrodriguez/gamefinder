@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Finder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+</head>
+
+<body>
+    <header class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href=".">
+                <img src="assets/palanca-de-mando.png" alt="Logo" data-bs-target="" height="40">
+                Game Finder
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#acerca">Acerca de</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#search">Buscar Juegos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#new">Novedades</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#form">Contáctanos</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <section id="acerca">
+        <div class="container mt-5">
+            <article class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="card-title">
+                                ¡Bienvenidos a GameFinder!
+                            </h2>
+                            <img src="assets/hero.avif" class="d-block w-100 lazyload" alt="hero"><br>
+                            <p class="card-text">Tu destino definitivo para descubrir y jugar los mejores videojuegos
+                                online. Nuestra misión es simplificar la búsqueda de tu próximo juego favorito,
+                                ofreciendo
+                                una plataforma fácil de usar y repleta de títulos emocionantes. Desde clásicos
+                                atemporales
+                                hasta las últimas novedades, nuestro compromiso es conectar a los jugadores con
+                                experiencias
+                                de juego inolvidables. ¡Explora, juega y comparte tu pasión por los videojuegos con
+                                nosotros!</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <main class="container mt-4">
+        <section id="search">
+            <h1 class="text-center">Game Finder</h1>
+            <div class="search-container my-4">
+                <div class="input-group">
+                    <input type="text" id="search-input" class="form-control" placeholder="Buscar juegos...">
+                    <button id="search-button" class="btn btn-primary">Buscar</button>
+                </div>
+            </div>
+            <div class="filters mb-4">
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <select id="genre-filter" class="form-select">
+                            <option value="">Todos los géneros</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <select id="rating-filter" class="form-select">
+                            <option value="">Todos los ratings</option>
+                            <option value="5">5 estrellas</option>
+                            <option value="4">4 estrellas</option>
+                            <option value="3">3 estrellas</option>
+                            <option value="2">2 estrellas</option>
+                            <option value="1">1 estrella</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <select id="origin-filter" class="form-select">
+                            <option value="">Todos los orígenes</option>
+                            <option value="pc">PC</option>
+                            <option value="playstation">PlayStation</option>
+                            <option value="xbox">Xbox</option>
+                            <option value="nintendo">Nintendo</option>
+                        </select>
+                    </div>
+                </div>
+                <button id="reset-button" class="btn btn-secondary w-100">Reestablecer filtros</button>
+            </div>
+            <div id="results" class="row results-grid"></div>
+        </section>
+    </main>
+
+
+
+    <section id="new">
+        <h2 class="text-center">Novedades</h2>
+        <div id="novedadesCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#novedadesCarousel" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="SparkingZero"></button>
+                <button type="button" data-bs-target="#novedadesCarousel" data-bs-slide-to="1"
+                    aria-label="Spiderman"></button>
+                <button type="button" data-bs-target="#novedadesCarousel" data-bs-slide-to="2"
+                    aria-label="CounterStrike2"></button>
+            </div>
+
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel"></div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="assets/sparkingzero.jpg" class="d-block w-100 lazyload" alt="Sparking Zero">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/spiderman.webp" class="d-block w-100 lazyload" alt="Spiderman">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/counterstrike2.webp" class="d-block w-100 lazyload" alt="Counter Stirke 2">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Siguiente</span>
+                </button>
+        </div>
+    </section>
+
+    <section id="form">
+        <div class="form">
+            <div class="form mt-5">
+                <h2 class="text-center mb-4">Contacto</h2>
+                <form id="contactForm" class="needs-validation" novalidate>
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre:</label>
+                        <input type="text" class=" form-control" id="nombre" required>
+                        <div class="invalid-feedback">
+                            Por favor ingresa tu nombre.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email:</label>
+                        <input type="email" class="form-control" id="email" required>
+                        <div class="invalid-feedback">
+                            Por favor ingresa un email válido.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="mensaje" class="form-label">Mensaje:</label>
+                        <textarea class="form-control" id="mensaje" rows="4" required></textarea>
+                        <div class="invalid-feedback">
+                            Por favor ingresa tu mensaje.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="opciones" class="form-label">Opciones:</label>
+                        <select class="form-select" id="opciones" required>
+                            <option value="">Selecciona una opción</option>
+                            <option value="consulta">Consulta</option>
+                            <option value="sugerencia">Sugerencia</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Por favor selecciona una opción.
+                        </div>
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="terminos" required>
+                        <label class="form-check-label" for="terminos">Acepto los términos y condiciones</label>
+                        <div class="invalid-feedback">
+                            Debes aceptar los términos y condiciones.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="imagen" class="form-label">Subir imagen:</label>
+                        <input type="file" class="form-control" id="imagen" required>
+                        <div class="invalid-feedback">
+                            Por favor sube una imagen.
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <footer class="bg-dark text-light text-center py-3">
+        <div class="container">
+            <div class="footer-icons mb-3">
+                <a href="mailto:lehenbiziko@hotmail.com" class="text-light mx-2"><i class="fas fa-envelope"></i></a>
+                <a href="https://github.com/gonzalolrodriguez" class="text-light mx-2" target="_blank"><i
+                        class="fab fa-github"></i></a>
+            </div>
+            <p>&copy; 2024 Rodriguez Gonzalo. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

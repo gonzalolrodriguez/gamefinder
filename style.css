@@ -1,0 +1,284 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #f2f2f2;
+    color: #333;
+    background: linear-gradient(135deg, #eef4fd, #d2e3fc, #9299fc);
+    animation: gradientAnimation 10s infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.nav-link {
+
+    font-size: 1.1em;
+    text-align: center;
+    padding: 1rem;
+}
+
+h1 {
+    padding: 1rem;
+    font-size: 2em;
+}
+
+h2 {
+    padding: 1rem;
+    font-size: 2em;
+}
+
+section {
+    padding: 7rem;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.game-card {
+    background: white;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    /* Agregamos una transición para transform y box-shadow */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    /* Necesario para el efecto de sombra */
+}
+
+.card-body:hover {
+    background: transparent;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 50px 50px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s;
+  
+
+
+}
+
+.game-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:transparent;
+    border-radius: 10px;
+    transition: opacity 0.3s;
+    /* Transición para la opacidad */
+    opacity: 1;
+    /* Inicialmente invisible */
+}
+
+.game-card:hover::before {
+    opacity: 1;
+    /* Al pasar el cursor, hacemos visible */
+}
+
+.game-card img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    transition: transform 0.3s;
+    /* Agregamos una transición para la imagen */
+}
+
+.game-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s;
+    /* Transición para el color del título */
+}
+
+.game-card p {
+    font-size: 0.9rem;
+    color: #000000;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    transition: color 0.3s;
+    /* Transición para el color del texto */
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+    /* Cambiamos la escala por translateY para evitar que se agrande */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    /* Aumentamos la intensidad de la sombra */
+}
+
+.game-card:hover img {
+    transform: scale(1.05);
+    /* Hacemos un ligero aumento en la escala de la imagen */
+}
+
+.game-card:hover h3,
+.game-card:hover p {
+    color: #0040ff;
+    /* Cambiamos el color del título y el texto al pasar el cursor */
+}
+
+.form-check-input[type=checkbox] {
+
+    border-radius: 1em;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-icons a {
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.footer-icons a:hover {
+    color: #007BFF;
+}
+
+#reset-button {
+    background-color: #0A54C1;
+    border-radius: 1.1em;
+    margin: 1em;
+    padding: 10px 20px;
+    align-items: center;
+}
+
+#reset-button:hover {
+    color: whitesmoke;
+    background-color: black;
+}
+
+.form {
+    background: fixed;
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 1rem;
+}
+
+.form:focus {
+    border-color: #080808;
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+.form label {
+    margin-bottom: 0.5em;
+}
+
+
+#contactForm.needs-validation{
+    align-items: center;
+    text-align: center;
+}
+
+.form input,
+.form textarea,
+.form select {
+    width: 100%;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    box-sizing: border-box;
+}
+
+/* Media queries para asegurar la responsividad en diferentes dispositivos */
+@media (min-width: 600px) {
+    .results-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    .form {
+        display: block;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .form label,
+    .form input,
+    .form textarea,
+    .form select {
+        flex: 1 1 auto;
+        margin-right: 1em;
+        /* Añadimos un margen derecho entre los elementos */
+    }
+
+    .form label {
+        flex-basis: 100%;
+        /* Ocupa todo el ancho en pantallas pequeñas */
+    }
+
+    #reset-button {
+        margin-right: 0;
+        /* Eliminamos el margen derecho en pantallas grandes */
+    }
+}
+
+/* Media query para pantallas grandes */
+@media (min-width: 1024px) {
+    .form {
+        max-width: 960px;
+        margin: auto;
+    }
+
+    @media (min-width: 480px) {
+        .form {
+            max-width: 460px;
+            margin: auto;
+        }
+
+
+        footer {
+            position: block;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #333;
+            /* Color de fondo del footer */
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            /* Espaciado interno para dar altura al footer */
+        }
+
+
+
+
+        /* Media queries para asegurar la responsividad en diferentes dispositivos */
+        @media (max-width: 768px) {
+            footer {
+                padding: 5px 0;
+                /* Menor espaciado para dispositivos más pequeños */
+            }
+        }
+
+        @media (max-width: 480px) {
+            footer {
+                padding: 3px 0;
+                /* Menor espaciado para dispositivos aún más pequeños */
+            }
+        }
